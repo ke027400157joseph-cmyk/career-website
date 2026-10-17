@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account | CareerPath</title>
+    <meta name="description" content="Create a CareerPath account to explore career opportunities and learning paths." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body { background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 35%, #eef2ff 100%); }
+        .auth-shell { min-height: 100vh; display: grid; place-items: center; padding: 40px 20px; }
+        .auth-card { width: min(100%, 460px); background: rgba(255,255,255,0.98); border: 1px solid rgba(148,163,184,0.2); border-radius: 28px; box-shadow: 0 30px 60px rgba(15,23,42,0.08); padding: 32px 28px; }
+        .auth-brand { display: flex; align-items: center; gap: 10px; font-size: 1.5rem; color: var(--primary); font-weight: 800; margin-bottom: 18px; }
+        .auth-card h1 { font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 8px; }
+        .auth-subtitle { color: var(--text-light); margin-bottom: 24px; line-height: 1.6; }
+        .auth-form { display: grid; gap: 16px; }
+        .auth-field { display: grid; gap: 8px; }
+        .auth-field label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); }
+        .auth-field input { width: 100%; border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; font: inherit; background: #f8fafc; color: var(--text); }
+        .auth-field input:focus { outline: none; border-color: rgba(37,99,235,0.5); box-shadow: 0 0 0 4px rgba(37,99,235,0.08); background: #fff; }
+        .login-status { min-height: 20px; font-size: 0.9rem; font-weight: 600; }
+        .login-status.error { color: #b91c1c; }
+        .login-status.success { color: #15803d; }
+        .auth-footnote { margin-top: 18px; text-align: center; color: var(--text-light); }
+        .auth-footnote a { color: var(--primary); font-weight: 700; }
+    </style>
+</head>
+<body>
+    <main class="auth-shell">
+        <section class="auth-card">
+            <div class="auth-brand"><i class="fas fa-briefcase"></i> CareerPath</div>
+            <h1>Create your account</h1>
+            <p class="auth-subtitle">Save your career progress and get personalized recommendations.</p>
+            <form id="register-form" class="auth-form" novalidate>
+                <div class="auth-field">
+                    <label for="name">Full name</label>
+                    <input id="name" name="name" type="text" autocomplete="name" maxlength="100" required />
+                </div>
+                <div class="auth-field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" autocomplete="email" maxlength="100" required />
+                </div>
+                <div class="auth-field">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" required />
+                </div>
+                <button type="submit" class="btn-primary">Create account</button>
+                <p id="register-status" class="login-status" aria-live="polite"></p>
+            </form>
+            <p class="auth-footnote">Already registered? <a href="login.html">Sign in</a></p>
+        </section>
+    </main>
+    <script>
+        const registerForm = document.getElementById('register-form');
+        const statusBox = document.getElementById('register-status');
+        const submitButton = registerForm.querySelector('button[type="submit"]');
+
+        registerForm.addEventListener('submit', async event => {
+            event.preventDefault();
+            statusBox.textContent = 'Creating your account...';
+            statusBox.className = 'login-status';
+            submitButton.disabled = true;
+
+            try {
+                const response = await fetch('../backend/auth/register.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: document.getElementById('name').value.trim(),
+                        email: document.getElementById('email').value.trim(),
+                        password: document.getElementById('password').value
+                    })
+                });
+                const result = await response.json();
+                if (!response.ok) throw new Error(result.message || 'Could not create your account.');
+                window.location.replace('login.html?registered=1');
+            } catch (error) {
+                statusBox.textContent = error.message;
+                statusBox.className = 'login-status error';
+            } finally {
+                submitButton.disabled = false;
+            }
+        });
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

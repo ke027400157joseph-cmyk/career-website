@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses & Learning Paths | CareerPath</title>
+    <meta name="description" content="Build the skills you need with structured learning paths, online courses, and career-focused training." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo"><i class="fas fa-briefcase"></i> CareerPath</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="courses.html" class="active">Courses</a></li>
+                <li><a href="quiz.html">Career Quiz</a></li>
+                <li><a href="ai.html">AI Guide</a></li>
+            </ul>
+            <div class="nav-auth">
+                <a href="dashboard.html" class="btn-outline">Dashboard</a>
+                <a href="register.html" class="btn-primary">Sign Up</a>
+            </div>
+            <button class="mobile-toggle" id="mobile-toggle"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header course-header">
+            <div class="container">
+                <span class="section-kicker">Learning hub</span>
+                <h1>Upskill for the career you want</h1>
+                <p>Learn the tools, mindsets, and certifications employers value most in your field.</p>
+
+                <div class="search-bar-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="course-search" class="search-input" placeholder="Search courses, skills, or topics" aria-label="Search courses" />
+                </div>
+
+                <div class="filter-tags">
+                    <button class="filter-tag active" type="button" data-course-category="all">All courses</button>
+                    <button class="filter-tag" type="button" data-course-category="technology">Technology</button>
+                    <button class="filter-tag" type="button" data-course-category="design">Design</button>
+                    <button class="filter-tag" type="button" data-course-category="business">Business</button>
+                    <button class="filter-tag" type="button" data-course-category="healthcare">Healthcare</button>
+                    <button class="filter-tag" type="button" data-course-category="engineering">Engineering</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <h3>120+</h3>
+                    <p>Expert-led courses</p>
+                </div>
+                <div class="stat-item">
+                    <h3>32 hrs</h3>
+                    <p>Average time to finish</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4.9/5</h3>
+                    <p>Student satisfaction</p>
+                </div>
+                <div class="stat-item">
+                    <h3>90%</h3>
+                    <p>Course completion rate</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="popular-careers course-section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <span class="section-kicker">Recommended</span>
+                        <h2 class="section-title">Career-building courses</h2>
+                    </div>
+                    <p id="course-result-count" class="course-result-count" aria-live="polite">Loading courses...</p>
+                </div>
+
+                <div class="course-grid" id="course-grid">
+                    <article class="course-card">
+                        <div class="course-thumb blue"><i class="fas fa-code"></i></div>
+                        <div class="course-body">
+                            <span class="course-tag">Web Development</span>
+                            <h3>Full-Stack Web Development</h3>
+                            <p>Build modern websites and web apps with HTML, CSS, JavaScript, and backend systems.</p>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 14 weeks</span>
+                                <span><i class="fas fa-user"></i> 14k learners</span>
+                            </div>
+                            <div class="course-footer">
+                                <strong>Free</strong>
+                                <a href="#" class="btn-primary">View Course</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card">
+                        <div class="course-thumb purple"><i class="fas fa-chart-line"></i></div>
+                        <div class="course-body">
+                            <span class="course-tag">Data</span>
+                            <h3>Data Analytics Foundation</h3>
+                            <p>Learn data cleaning, dashboards, and business storytelling to drive smarter decisions.</p>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 10 weeks</span>
+                                <span><i class="fas fa-user"></i> 9k learners</span>
+                            </div>
+                            <div class="course-footer">
+                                <strong>$29</strong>
+                                <a href="#" class="btn-primary">View Course</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card">
+                        <div class="course-thumb orange"><i class="fas fa-paint-brush"></i></div>
+                        <div class="course-body">
+                            <span class="course-tag">Design</span>
+                            <h3>UX Research & Wireframing</h3>
+                            <p>Understand user behavior and turn research into thoughtful, intuitive interface experiences.</p>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 8 weeks</span>
+                                <span><i class="fas fa-user"></i> 11k learners</span>
+                            </div>
+                            <div class="course-footer">
+                                <strong>$39</strong>
+                                <a href="#" class="btn-primary">View Course</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card">
+                        <div class="course-thumb green"><i class="fas fa-briefcase"></i></div>
+                        <div class="course-body">
+                            <span class="course-tag">Business</span>
+                            <h3>Digital Marketing Bootcamp</h3>
+                            <p>Grow brands online using content strategy, campaign optimization, and ROI-driven planning.</p>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 12 weeks</span>
+                                <span><i class="fas fa-user"></i> 7k learners</span>
+                            </div>
+                            <div class="course-footer">
+                                <strong>$25</strong>
+                                <a href="#" class="btn-primary">View Course</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card">
+                        <div class="course-thumb red"><i class="fas fa-shield-alt"></i></div>
+                        <div class="course-body">
+                            <span class="course-tag">Cybersecurity</span>
+                            <h3>Cybersecurity Essentials</h3>
+                            <p>Learn the foundations of digital security, risk management, and threat detection.</p>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 9 weeks</span>
+                                <span><i class="fas fa-user"></i> 6k learners</span>
+                            </div>
+                            <div class="course-footer">
+                                <strong>$34</strong>
+                                <a href="#" class="btn-primary">View Course</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card">
+                        <div class="course-thumb teal"><i class="fas fa-project-diagram"></i></div>
+                        <div class="course-body">
+                            <span class="course-tag">Product</span>
+                            <h3>Product Management Fundamentals</h3>
+                            <p>Master discovery, prioritization, roadmap planning, and stakeholder communication.</p>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 11 weeks</span>
+                                <span><i class="fas fa-user"></i> 8k learners</span>
+                            </div>
+                            <div class="course-footer">
+                                <strong>$29</strong>
+                                <a href="#" class="btn-primary">View Course</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="quiz-cta">
+            <div class="container quiz-cta-content">
+                <div class="quiz-text">
+                    <span class="section-kicker light">Career growth</span>
+                    <h2>Build a learning plan that matches your goals</h2>
+                    <p>Take the quiz and discover which careers fit your strengths, then follow a targeted learning roadmap.</p>
+                    <a href="quiz.html" class="btn-primary">Take the quiz</a>
+                </div>
+                <div class="quiz-image"><i class="fas fa-graduation-cap"></i></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo footer-logo"><i class="fas fa-briefcase"></i> CareerPath</a>
+                <p>Career guidance that makes learning practical, focused, and aligned with the future you want.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help center</a></li>
+                    <li><a href="#">Mentors</a></li>
+                    <li><a href="#">Learning guides</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Email address" />
+                    <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 CareerPath. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/courses.js"></script>
+</body>
+</html>

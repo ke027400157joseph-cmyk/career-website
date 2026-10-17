@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | CareerPath</title>
+    <meta name="description" content="Track your career goals, saved roles, and personalized learning roadmap in one place." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo"><i class="fas fa-briefcase"></i> CareerPath</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="quiz.html">Career Quiz</a></li>
+                <li><a href="ai.html">AI Guide</a></li>
+                <li><a href="profile.html">My Profile</a></li>
+            </ul>
+            <div class="nav-auth">
+                <a id="admin-link" href="../admin/index.html" class="btn-outline" hidden>Admin</a>
+                <a href="profile.html" class="btn-outline">My profile</a>
+                <a href="dashboard.html" class="btn-primary">Dashboard</a>
+                <form action="../backend/auth/logout.php" method="post" class="logout-form">
+                    <button type="submit" class="btn-outline">Log Out</button>
+                </form>
+            </div>
+            <button class="mobile-toggle" id="mobile-toggle"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <main class="dashboard-page">
+        <section class="dashboard-hero">
+            <div class="container dashboard-hero-inner">
+                <div>
+                    <span class="section-kicker">Welcome back</span>
+                    <h1>Hello, <span id="dashboard-name">there</span></h1>
+                    <p>Your career plan is moving in the right direction. Take a look at your next opportunities, saved roles, and learning priorities.</p>
+                </div>
+                <div class="dashboard-actions">
+                    <a href="careers.html" class="btn-primary">Explore Careers</a>
+                    <a href="quiz.html" class="btn-secondary">Retake Quiz</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container dashboard-main">
+            <div class="stats-grid dashboard-stats">
+                <div class="stat-item dashboard-stat-card">
+                    <span class="stat-label">Profile location</span>
+                    <h3 id="dashboard-location">--</h3>
+                    <p>From your profile</p>
+                </div>
+                <div class="stat-item dashboard-stat-card">
+                    <span class="stat-label">Saved jobs</span>
+                    <h3 id="saved-jobs-count">0</h3>
+                    <p>Open applications</p>
+                </div>
+                <div class="stat-item dashboard-stat-card">
+                    <span class="stat-label">Courses</span>
+                    <h3 id="courses-count">0</h3>
+                    <p>In progress</p>
+                </div>
+                <div class="stat-item dashboard-stat-card">
+                    <span class="stat-label">Roadmap</span>
+                    <h3 id="quiz-count">0</h3>
+                    <p>Next milestones</p>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <aside class="panel-card large-panel">
+                    <div class="panel-header">
+                        <h3>Explore career paths</h3>
+                        <a href="careers.html">View all</a>
+                    </div>
+
+                    <div class="recommendation-list" id="career-recommendations">
+                        <p class="loading-state">Loading career recommendations...</p>
+                    </div>
+                </aside>
+
+                <aside class="panel-card">
+                    <div class="panel-header">
+                        <h3>Saved jobs</h3>
+                        <a href="saved-jobs.html">See all</a>
+                    </div>
+
+                    <div class="saved-list" id="dashboard-saved-jobs">
+                        <p class="loading-state">Loading saved jobs...</p>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="dashboard-grid lower-grid">
+                <section class="panel-card">
+                    <div class="panel-header">
+                        <h3>Learning roadmap</h3>
+                        <a href="courses.html">Open plan</a>
+                    </div>
+
+                    <ul class="timeline">
+                        <li>
+                            <span class="time-dot active"></span>
+                            <div>
+                                <strong>Complete UX Foundations</strong>
+                                <p>Finish module 3 by Friday</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time-dot"></span>
+                            <div>
+                                <strong>Build portfolio project</strong>
+                                <p>3 case studies in progress</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="time-dot"></span>
+                            <div>
+                                <strong>Prepare interview stories</strong>
+                                <p>Review common behavioral questions</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="panel-card">
+                    <div class="panel-header">
+                        <h3>Career insights</h3>
+                        <a href="profile.html">Update</a>
+                    </div>
+
+                    <div class="insight-boxes">
+                        <div class="insight-box">
+                            <span class="insight-label">Salary outlook</span>
+                            <strong>$96k</strong>
+                            <small>Median for matching roles</small>
+                        </div>
+                        <div class="insight-box">
+                            <span class="insight-label">Skill focus</span>
+                            <strong>Research</strong>
+                            <small>High-value skill trend</small>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo footer-logo"><i class="fas fa-briefcase"></i> CareerPath</a>
+                <p>Turn your ambitions into a clear, confident career plan.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html">My profile</a></li>
+                    <li><a href="saved-jobs.html">Saved jobs</a></li>
+                    <li><a href="quiz-results.html">Quiz history</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Mentoring</a></li>
+                    <li><a href="#">Career guides</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 CareerPath. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

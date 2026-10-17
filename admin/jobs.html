@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Jobs | CareerPath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-page" data-admin-view="jobs">
+    <header class="header"><nav class="navbar container"><a class="logo" href="index.html"><img class="career-matters-logo" src="../frontend/assets/career-matters-logo-cropped.png" alt="Career Matters"><span>Admin</span></a><div class="nav-auth"><a class="btn-outline" href="../frontend/dashboard.html">Back to site</a><form action="../backend/auth/logout.php" method="post"><button class="btn-primary" type="submit">Log out</button></form></div></nav></header>
+    <main class="admin-shell"><div class="admin-heading"><div><span class="section-kicker">Catalogue</span><h1>Manage jobs</h1><p>Keep job listings current and accurate.</p></div></div>
+        <nav class="admin-nav"><a href="index.html">Overview</a><a href="careers.html">Careers</a><a class="active" href="jobs.html">Jobs</a><a href="courses.html">Courses</a></nav>
+        <section class="admin-panel"><h2 id="form-heading">Add job</h2><form id="admin-editor" class="admin-form"></form><p id="admin-status" class="admin-status" role="status" aria-live="polite"></p></section>
+        <section class="admin-panel"><h2>Job records</h2><div class="admin-table-wrap"><table class="admin-table"><thead id="admin-head"></thead><tbody id="admin-rows"></tbody></table></div></section>
+    </main><script src="../js/admin.js"></script>
+</body>
+</html>

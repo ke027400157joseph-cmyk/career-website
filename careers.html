@@ -1,0 +1,133 @@
+<!-- frontend/careers.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Careers - CareerPath</title>
+    <meta name="description" content="Browse hundreds of career paths. Find detailed information on salaries, required skills, and growth opportunities.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- ==================== NAVBAR (Same as index) ==================== -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-briefcase"></i> CareerPath
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="careers.html" class="active">Careers</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="quiz.html">Career Quiz</a></li>
+            </ul>
+            <div class="nav-auth">
+                <a href="login.html" class="btn-outline">Log In</a>
+                <a href="register.html" class="btn-primary">Sign Up</a>
+            </div>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ==================== PAGE HEADER & SEARCH ==================== -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Explore Career Paths</h1>
+                <p>Discover detailed insights into hundreds of professions, from tech to healthcare.</p>
+                
+                <!-- Search Bar -->
+                <div class="search-bar-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="career-search" class="search-input" placeholder="Search careers by title, skill, or keyword...">
+                </div>
+
+                <!-- Filter Tags -->
+                <div class="filter-tags">
+                    <button class="filter-tag active" data-filter="all">All Careers</button>
+                    <button class="filter-tag" data-filter="technology">Technology</button>
+                    <button class="filter-tag" data-filter="healthcare">Healthcare</button>
+                    <button class="filter-tag" data-filter="business">Business</button>
+                    <button class="filter-tag" data-filter="design">Design</button>
+                    <button class="filter-tag" data-filter="engineering">Engineering</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CAREERS GRID ==================== -->
+        <section class="careers-list-section">
+            <div class="container">
+                <div class="results-header">
+                    <p id="results-count">Loading careers...</p>
+                </div>
+                
+                <!-- Grid will be populated by JS -->
+                <div id="all-careers-grid" class="careers-grid">
+                    <div class="loading-state"><i class="fas fa-spinner fa-spin"></i> Loading careers...</div>
+                </div>
+
+                <!-- Empty State (Hidden by default) -->
+                <div id="empty-state" class="empty-state" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>No careers found</h3>
+                    <p>Try adjusting your search or filter to find what you're looking for.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER (Same as index) ==================== -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo footer-logo"><i class="fas fa-briefcase"></i> CareerPath</a>
+                <p>Empowering individuals to discover, learn, and achieve their dream careers.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="careers.html">Explore Careers</a></li>
+                    <li><a href="jobs.html">Find Jobs</a></li>
+                    <li><a href="courses.html">Top Courses</a></li>
+                    <li><a href="quiz.html">Career Quiz</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Get the latest career tips and job alerts.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 CareerPath. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/careers.js"></script> <!-- We will create this next -->
+</body>
+</html>

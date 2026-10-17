@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile | CareerPath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/account.css">
+</head>
+<body>
+    <header class="header"><nav class="navbar container">
+        <a href="index.html" class="logo"><i class="fas fa-briefcase"></i> CareerPath</a>
+        <ul class="nav-links" id="nav-links"><li><a href="index.html">Home</a></li><li><a href="careers.html">Careers</a></li><li><a href="jobs.html">Jobs</a></li><li><a href="courses.html">Courses</a></li><li><a href="dashboard.html">Dashboard</a></li></ul>
+        <div class="nav-auth"><a href="saved-jobs.html" class="btn-outline">Saved jobs</a><form action="../backend/auth/logout.php" method="post"><button class="btn-primary" type="submit">Log out</button></form></div>
+        <button class="mobile-toggle" id="mobile-toggle" type="button" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+    </nav></header>
+    <main class="account-page"><div class="container account-shell">
+        <div class="account-heading"><div><span class="section-kicker">Account</span><h1>My profile</h1><p>Keep your contact details and career context up to date.</p></div><a class="btn-secondary" href="dashboard.html">Back to dashboard</a></div>
+        <section class="account-panel">
+            <form id="profile-form" class="account-form">
+                <div class="account-field"><label for="profile-name">Full name</label><input id="profile-name" name="name" autocomplete="name" required maxlength="100"></div>
+                <div class="account-field"><label for="profile-email">Email address</label><input id="profile-email" name="email" type="email" autocomplete="email" required maxlength="100"></div>
+                <div class="account-field"><label for="profile-phone">Phone</label><input id="profile-phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
+                <div class="account-field"><label for="profile-location">Location</label><input id="profile-location" name="location" autocomplete="address-level2" maxlength="120"></div>
+                <div class="account-field full"><label for="profile-bio">Career interests</label><textarea id="profile-bio" name="bio" maxlength="500" placeholder="Share your goals, interests, or experience"></textarea></div>
+                <div class="account-actions"><button class="btn-primary" type="submit">Save profile</button><p id="profile-status" class="account-status" role="status" aria-live="polite"></p></div>
+            </form>
+        </section>
+    </div></main>
+    <footer class="career-footer">
+        <div class="container">
+            <div class="career-footer-top">
+                <a href="index.html" class="career-footer-brand">
+                    <img class="career-footer-logo" src="assets/career-matters-logo-cropped.png" alt="Career Matters">
+                </a>
+                <div class="career-footer-social">
+                    <h2>Follow us on social media</h2>
+                    <div class="career-social-links">
+                        <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="career-footer-contact">
+                    <a href="jobs.html"><i class="fas fa-briefcase" aria-hidden="true"></i> Explore job opportunities</a>
+                    <a href="courses.html"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Discover career courses</a>
+                </div>
+            </div>
+            <a class="career-footer-cta" href="careers.html">Explore career paths and plan your next step</a>
+            <div class="career-footer-links">
+                <a href="index.html#security">Privacy &amp; Security</a>
+                <nav aria-label="Footer navigation">
+                    <a href="index.html">Home</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="jobs.html">Jobs</a>
+                    <a href="courses.html">Courses</a>
+                    <a href="quiz.html">Career Quiz</a>
+                    <a href="profile.html" aria-current="page">My Profile</a>
+                </nav>
+            </div>
+        </div>
+        <div class="career-footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 CareerPath. All rights reserved.</p>
+                <a href="index.html#security">Privacy &amp; Security</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script><script src="../js/profile.js"></script>
+</body>
+</html>

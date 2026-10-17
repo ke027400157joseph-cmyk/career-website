@@ -1,0 +1,137 @@
+<!-- frontend/quiz.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Quiz - Discover Your Path | CareerPath</title>
+    <meta name="description" content="Take our free career assessment quiz to discover career paths that match your personality, skills, and interests.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo"><i class="fas fa-briefcase"></i> CareerPath</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="quiz.html" class="active">Career Quiz</a></li>
+            </ul>
+            <div class="nav-auth">
+                <a href="login.html" class="btn-outline">Log In</a>
+                <a href="register.html" class="btn-primary">Sign Up</a>
+            </div>
+            <button class="mobile-toggle" id="mobile-toggle"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <main class="quiz-page">
+        <div class="container">
+
+            <!-- ============ SCREEN 1: INTRO ============ -->
+            <section id="quiz-intro" class="quiz-screen active">
+                <div class="quiz-intro-card">
+                    <div class="quiz-intro-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h1>Discover Your Ideal Career</h1>
+                    <p class="quiz-intro-subtitle">Answer 8 quick questions and we'll match you with career paths that fit your personality, skills, and goals.</p>
+                    
+                    <div class="quiz-features">
+                        <div class="quiz-feature">
+                            <i class="fas fa-clock"></i>
+                            <span>5 minutes</span>
+                        </div>
+                        <div class="quiz-feature">
+                            <i class="fas fa-question-circle"></i>
+                            <span>8 questions</span>
+                        </div>
+                        <div class="quiz-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Personalized results</span>
+                        </div>
+                    </div>
+
+                    <button id="start-quiz-btn" class="btn-primary btn-large">
+                        Start the Quiz <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <p class="quiz-disclaimer">Free • No sign-up required • 100% confidential</p>
+                </div>
+            </section>
+
+            <!-- ============ SCREEN 2: QUESTIONS ============ -->
+            <section id="quiz-questions" class="quiz-screen">
+                <!-- Progress Bar -->
+                <div class="quiz-progress-container">
+                    <div class="quiz-progress-info">
+                        <span id="quiz-progress-text">Question 1 of 8</span>
+                        <span id="quiz-progress-percent">0%</span>
+                    </div>
+                    <div class="quiz-progress-bar">
+                        <div id="quiz-progress-fill" class="quiz-progress-fill"></div>
+                    </div>
+                </div>
+
+                <!-- Question Card -->
+                <div class="quiz-question-card">
+                    <h2 id="question-text" class="question-text">Loading question...</h2>
+                    <div id="options-container" class="options-container">
+                        <!-- Options injected by JS -->
+                    </div>
+
+                    <div class="quiz-nav-buttons">
+                        <button id="prev-btn" class="btn-secondary" disabled>
+                            <i class="fas fa-arrow-left"></i> Back
+                        </button>
+                        <button id="next-btn" class="btn-primary" disabled>
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ SCREEN 3: RESULTS ============ -->
+            <section id="quiz-results" class="quiz-screen">
+                <div class="quiz-results-header">
+                    <div class="results-icon"><i class="fas fa-trophy"></i></div>
+                    <h1>Your Career Matches</h1>
+                    <p>Based on your answers, here are the career paths that best fit you.</p>
+                </div>
+
+                <div id="results-grid" class="results-grid">
+                    <div class="loading-state"><i class="fas fa-spinner fa-spin"></i> Analyzing your results...</div>
+                </div>
+
+                <div class="quiz-results-actions">
+                    <button id="retake-quiz-btn" class="btn-secondary btn-large">
+                        <i class="fas fa-redo"></i> Retake Quiz
+                    </button>
+                    <a href="quiz-results.html" class="btn-outline btn-large">View saved history</a>
+                    <a href="careers.html" class="btn-primary btn-large">
+                        Explore All Careers <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 CareerPath. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/quiz.js"></script>
+</body>
+</html>

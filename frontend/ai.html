@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career & Learning Guide | CareerPath</title>
+    <meta name="description" content="Ask CareerPath AI about career choices, learning, study skills, and your next steps." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/ai.css">
+</head>
+<body class="ai-page">
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo"><i class="fas fa-briefcase"></i> CareerPath</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="quiz.html">Career Quiz</a></li>
+                <li><a href="ai.html" class="active" aria-current="page">AI Guide</a></li>
+            </ul>
+            <div class="nav-auth">
+                <a href="dashboard.html" class="btn-outline">Dashboard</a>
+                <form action="../backend/auth/logout.php" method="post" class="logout-form">
+                    <button type="submit" class="btn-primary">Log Out</button>
+                </form>
+            </div>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <main class="ai-layout">
+        <aside class="ai-sidebar" aria-label="AI guide options">
+            <button id="new-chat" class="new-chat-button" type="button"><i class="fas fa-plus" aria-hidden="true"></i> New conversation</button>
+            <div class="sidebar-section">
+                <p class="sidebar-label">Explore a topic</p>
+                <button class="topic-button" type="button" data-prompt="Help me compare two careers that interest me."><i class="fas fa-compass" aria-hidden="true"></i><span>Career direction</span></button>
+                <button class="topic-button" type="button" data-prompt="Explain a difficult school or study topic step by step."><i class="fas fa-book-open" aria-hidden="true"></i><span>Study support</span></button>
+                <button class="topic-button" type="button" data-prompt="Help me prepare for a job interview in my chosen field."><i class="fas fa-comments" aria-hidden="true"></i><span>Interview practice</span></button>
+                <button class="topic-button" type="button" data-prompt="Help me make a practical learning plan for a career I want."><i class="fas fa-list-check" aria-hidden="true"></i><span>Learning plan</span></button>
+            </div>
+            <div class="sidebar-note">
+                <span class="sidebar-note-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></span>
+                <p>Share your level, goals, or location when it helps tailor an answer.</p>
+            </div>
+        </aside>
+
+        <section class="ai-chat" aria-labelledby="ai-title">
+            <div class="chat-topbar">
+                <div class="guide-identity">
+                    <span class="guide-avatar"><i class="fas fa-sparkles" aria-hidden="true"></i></span>
+                    <div>
+                        <h1 id="ai-title">Career & Learning Guide</h1>
+                        <p><span class="online-indicator"></span> Ready to help</p>
+                    </div>
+                </div>
+                <span class="powered-label">AI GUIDE</span>
+            </div>
+
+            <div id="chat-thread" class="chat-thread" role="log" aria-live="polite" aria-relevant="additions text">
+                <div id="welcome-state" class="welcome-state">
+                    <span class="welcome-icon"><i class="fas fa-sparkles" aria-hidden="true"></i></span>
+                    <p class="welcome-kicker">A good question can open a new path</p>
+                    <h2>What would you like to figure out?</h2>
+                    <p class="welcome-copy">Explore career choices, understand a study topic, or plan your next learning step.</p>
+                    <div class="suggestion-grid">
+                        <button type="button" class="suggestion-button" data-prompt="I enjoy biology and helping people. What careers could suit me?">
+                            <i class="fas fa-heart-pulse" aria-hidden="true"></i><span><strong>Explore career options</strong><small>Find paths that fit your interests</small></span><i class="fas fa-arrow-up-right-from-square suggestion-arrow" aria-hidden="true"></i>
+                        </button>
+                        <button type="button" class="suggestion-button" data-prompt="Explain photosynthesis in simple steps, then give me a quick way to remember it.">
+                            <i class="fas fa-flask" aria-hidden="true"></i><span><strong>Understand a subject</strong><small>Get a clear step-by-step explanation</small></span><i class="fas fa-arrow-up-right-from-square suggestion-arrow" aria-hidden="true"></i>
+                        </button>
+                        <button type="button" class="suggestion-button" data-prompt="I want to become a data analyst. What should I learn first?">
+                            <i class="fas fa-chart-line" aria-hidden="true"></i><span><strong>Build a learning plan</strong><small>Turn a goal into practical steps</small></span><i class="fas fa-arrow-up-right-from-square suggestion-arrow" aria-hidden="true"></i>
+                        </button>
+                        <button type="button" class="suggestion-button" data-prompt="How can I prepare for my first job interview? Give me a short checklist.">
+                            <i class="fas fa-briefcase" aria-hidden="true"></i><span><strong>Prepare for work</strong><small>Practice interviews and job search</small></span><i class="fas fa-arrow-up-right-from-square suggestion-arrow" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <form id="question-form" class="composer">
+                <label class="visually-hidden" for="question-input">Ask a career or learning question</label>
+                <textarea id="question-input" rows="1" maxlength="4000" placeholder="Ask about careers, study, or what to learn next..." required></textarea>
+                <div class="composer-bottom">
+                    <p id="composer-status" class="composer-hint" aria-live="polite">Answers can be imperfect. Check important details.</p>
+                    <div class="composer-controls">
+                        <span id="character-count" class="character-count">0 / 4,000</span>
+                        <button id="send-question" class="send-button" type="submit" aria-label="Send question" title="Send question"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="../js/main.js"></script>
+    <script src="../js/ai.js"></script>
+</body>
+</html>

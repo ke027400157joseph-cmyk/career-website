@@ -1,0 +1,238 @@
+<!-- frontend/jobs.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Jobs - CareerPath</title>
+    <meta name="description" content="Browse thousands of job openings from top companies. Filter by job type, location, and career category.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo"><i class="fas fa-briefcase"></i> CareerPath</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="jobs.html" class="active">Jobs</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="quiz.html">Career Quiz</a></li>
+                <li><a href="ai.html">AI Guide</a></li>
+                <li class="nav-dropdown">
+                    <button type="button" class="dropdown-toggle" aria-expanded="false" aria-controls="site-sections-menu">
+                        Sections <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu" id="site-sections-menu">
+                        <li><a href="index.html#platform">Platform</a></li>
+                        <li><a href="index.html#security">Security</a></li>
+                        <li><a href="index.html#frontend">Frontend</a></li>
+                        <li><a href="index.html#backend">Backend</a></li>
+                        <li><a href="index.html#kenya">Kenya</a></li>
+                        <li><a href="index.html#dashboard">Dashboard</a></li>
+                        <li><a href="index.html#conclusion">Conclusion</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-auth">
+                <a href="login.html" class="btn-outline">Log In</a>
+                <a href="register.html" class="btn-primary">Sign Up</a>
+            </div>
+            <button class="mobile-toggle" id="mobile-toggle"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ==================== PAGE HEADER ==================== -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Find Your Dream Job</h1>
+                <p>Explore thousands of opportunities from top companies around the world.</p>
+                
+                <!-- Search Bar -->
+                <div class="jobs-search-container">
+                    <div class="search-field">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="job-search" placeholder="Job title, keyword, or company...">
+                    </div>
+                    <div class="search-field">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" id="job-location" placeholder="City, state, or 'Remote'...">
+                    </div>
+                    <button id="search-btn" class="btn-primary">
+                        <i class="fas fa-search"></i> Search Jobs
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== JOBS CONTENT ==================== -->
+        <section class="jobs-section">
+            <div class="container jobs-layout">
+                
+                <!-- Sidebar Filters -->
+                <aside class="jobs-filters">
+                    <div class="filter-header">
+                        <h3><i class="fas fa-filter"></i> Filters</h3>
+                        <button id="clear-filters" class="clear-btn">Clear All</button>
+                    </div>
+
+                    <!-- Job Type Filter -->
+                    <div class="filter-group">
+                        <h4>Job Type</h4>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="job_type" value="Full-time">
+                            <span class="checkmark"></span>
+                            <span>Full-time</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="job_type" value="Part-time">
+                            <span class="checkmark"></span>
+                            <span>Part-time</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="job_type" value="Contract">
+                            <span class="checkmark"></span>
+                            <span>Contract</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="job_type" value="Remote">
+                            <span class="checkmark"></span>
+                            <span>Remote</span>
+                        </label>
+                    </div>
+
+                    <!-- Category Filter -->
+                    <div class="filter-group">
+                        <h4>Category</h4>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="category" value="technology">
+                            <span class="checkmark"></span>
+                            <span>Technology</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="category" value="healthcare">
+                            <span class="checkmark"></span>
+                            <span>Healthcare</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="category" value="business">
+                            <span class="checkmark"></span>
+                            <span>Business</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="category" value="design">
+                            <span class="checkmark"></span>
+                            <span>Design</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="category" value="engineering">
+                            <span class="checkmark"></span>
+                            <span>Engineering</span>
+                        </label>
+                    </div>
+                </aside>
+
+                <!-- Jobs List -->
+                <div class="jobs-main">
+                    <div class="jobs-results-header">
+                        <p id="jobs-count">Loading jobs...</p>
+                        <button id="mobile-filter-toggle" class="btn-secondary mobile-only">
+                            <i class="fas fa-sliders-h"></i> Filters
+                        </button>
+                    </div>
+
+                    <div id="jobs-list" class="jobs-list">
+                        <div class="loading-state"><i class="fas fa-spinner fa-spin"></i> Loading jobs...</div>
+                    </div>
+
+                    <!-- Empty State -->
+                    <div id="jobs-empty" class="empty-state" style="display: none;">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>No jobs found</h3>
+                        <p>Try adjusting your search or filters to find what you're looking for.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <dialog id="job-application-dialog" class="job-application-dialog" aria-labelledby="application-title">
+        <form id="job-application-form" class="application-form">
+            <div class="application-header">
+                <div>
+                    <p class="section-kicker">Job application</p>
+                    <h2 id="application-title">Apply for this role</h2>
+                    <p id="application-job-name" class="application-job-name"></p>
+                </div>
+                <button id="close-application" class="application-close" type="button" aria-label="Close application form"><i class="fas fa-times" aria-hidden="true"></i></button>
+            </div>
+            <input id="application-job-id" name="job_id" type="hidden">
+            <div class="application-fields">
+                <label>Full name<input name="name" type="text" autocomplete="name" maxlength="100" required></label>
+                <label>Email address<input name="email" type="email" autocomplete="email" maxlength="150" required></label>
+                <label>Phone (optional)<input name="phone" type="tel" autocomplete="tel" maxlength="40"></label>
+                <label>Cover letter (optional)<textarea name="cover_letter" rows="5" maxlength="5000" placeholder="Tell the employer why you are interested"></textarea></label>
+            </div>
+            <p class="application-notice">Your application will be saved securely for the hiring team to review.</p>
+            <p id="application-status" class="application-status" role="status" aria-live="polite"></p>
+            <div class="application-actions">
+                <button id="cancel-application" class="btn-secondary" type="button">Cancel</button>
+                <button id="submit-application" class="btn-primary" type="submit">Submit application</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo footer-logo"><i class="fas fa-briefcase"></i> CareerPath</a>
+                <p>Empowering individuals to discover, learn, and achieve their dream careers.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="careers.html">Explore Careers</a></li>
+                    <li><a href="jobs.html">Find Jobs</a></li>
+                    <li><a href="courses.html">Top Courses</a></li>
+                    <li><a href="quiz.html">Career Quiz</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Get the latest career tips and job alerts.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 CareerPath. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

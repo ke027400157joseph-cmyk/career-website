@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Opportunities | CareerPath</title>
+    <meta name="description" content="Browse career opportunities, compare roles, and find your next step with structured career guidance." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo"><i class="fas fa-briefcase"></i> CareerPath</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="careers.html" class="active">Careers</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="quiz.html">Career Quiz</a></li>
+                <li><a href="ai.html">AI Guide</a></li>
+            </ul>
+            <div class="nav-auth">
+                <a href="dashboard.html" class="btn-outline">Dashboard</a>
+                <a href="register.html" class="btn-primary">Sign Up</a>
+            </div>
+            <button class="mobile-toggle" id="mobile-toggle"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <span class="section-kicker">Career explorer</span>
+                <h1>Find the right role for your future</h1>
+                <p>Explore growing careers, compare earning potential, and discover what skills move you forward.</p>
+
+                <div class="search-bar-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search by role, industry, or skill" aria-label="Search career roles" />
+                </div>
+
+                <div class="filter-tags">
+                    <button class="filter-tag active" data-filter="all">All</button>
+                    <button class="filter-tag" data-filter="technology">Technology</button>
+                    <button class="filter-tag" data-filter="healthcare">Healthcare</button>
+                    <button class="filter-tag" data-filter="design">Design</button>
+                    <button class="filter-tag" data-filter="business">Business</button>
+                    <button class="filter-tag" data-filter="education">Education</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="careers-list-section">
+            <div class="container">
+                <div class="jobs-results-header">
+                    <span id="results-count">Showing 6 careers</span>
+                    <span class="text-muted">Updated this week</span>
+                </div>
+
+                <div class="careers-grid" id="all-careers-grid">
+                    <article class="card career-list-card">
+                        <div class="career-card-top">
+                            <div>
+                                <span class="career-tag">Technology</span>
+                                <h3>Software Engineer</h3>
+                            </div>
+                            <span class="salary-tag">$110,000</span>
+                        </div>
+                        <p>Design, build, and maintain scalable digital products for modern businesses and users.</p>
+                        <ul class="career-points">
+                            <li><i class="fas fa-check"></i> Remote-friendly</li>
+                            <li><i class="fas fa-check"></i> High demand</li>
+                        </ul>
+                        <div class="card-footer">
+                            <span>4.8 growth outlook</span>
+                            <a href="career-details.html?id=1" class="btn-outline">View Details</a>
+                        </div>
+                    </article>
+
+                    <article class="card career-list-card">
+                        <div class="career-card-top">
+                            <div>
+                                <span class="career-tag">Data</span>
+                                <h3>Data Scientist</h3>
+                            </div>
+                            <span class="salary-tag">$122,000</span>
+                        </div>
+                        <p>Turn data into strategy by building models, visualizing insights, and uncovering patterns.</p>
+                        <ul class="career-points">
+                            <li><i class="fas fa-check"></i> Analytical work</li>
+                            <li><i class="fas fa-check"></i> Strong market demand</li>
+                        </ul>
+                        <div class="card-footer">
+                            <span>AI & analytics</span>
+                            <a href="career-details.html?id=2" class="btn-outline">View Details</a>
+                        </div>
+                    </article>
+
+                    <article class="card career-list-card">
+                        <div class="career-card-top">
+                            <div>
+                                <span class="career-tag">Design</span>
+                                <h3>UX/UI Designer</h3>
+                            </div>
+                            <span class="salary-tag">$96,000</span>
+                        </div>
+                        <p>Create intuitive experiences that make products easier, clearer, and more enjoyable to use.</p>
+                        <ul class="career-points">
+                            <li><i class="fas fa-check"></i> Creative focus</li>
+                            <li><i class="fas fa-check"></i> User-centered</li>
+                        </ul>
+                        <div class="card-footer">
+                            <span>Brand + digital</span>
+                            <a href="career-details.html?id=3" class="btn-outline">View Details</a>
+                        </div>
+                    </article>
+
+                    <article class="card career-list-card">
+                        <div class="career-card-top">
+                            <div>
+                                <span class="career-tag">Healthcare</span>
+                                <h3>Registered Nurse</h3>
+                            </div>
+                            <span class="salary-tag">$78,000</span>
+                        </div>
+                        <p>Support patient care, work with medical teams, and build trust through compassionate care.</p>
+                        <ul class="career-points">
+                            <li><i class="fas fa-check"></i> Hands-on care</li>
+                            <li><i class="fas fa-check"></i> Stable demand</li>
+                        </ul>
+                        <div class="card-footer">
+                            <span>High impact</span>
+                            <a href="career-details.html?id=4" class="btn-outline">View Details</a>
+                        </div>
+                    </article>
+
+                    <article class="card career-list-card">
+                        <div class="career-card-top">
+                            <div>
+                                <span class="career-tag">Business</span>
+                                <h3>Marketing Manager</h3>
+                            </div>
+                            <span class="salary-tag">$88,000</span>
+                        </div>
+                        <p>Lead brand strategy, campaign planning, and customer growth across digital channels.</p>
+                        <ul class="career-points">
+                            <li><i class="fas fa-check"></i> Strategy-focused</li>
+                            <li><i class="fas fa-check"></i> Growth driven</li>
+                        </ul>
+                        <div class="card-footer">
+                            <span>Brand growth</span>
+                            <a href="career-details.html?id=5" class="btn-outline">View Details</a>
+                        </div>
+                    </article>
+
+                    <article class="card career-list-card">
+                        <div class="career-card-top">
+                            <div>
+                                <span class="career-tag">Engineering</span>
+                                <h3>Civil Engineer</h3>
+                            </div>
+                            <span class="salary-tag">$92,000</span>
+                        </div>
+                        <p>Plan, design, and supervise essential infrastructure projects that support daily life.</p>
+                        <ul class="career-points">
+                            <li><i class="fas fa-check"></i> Project-based</li>
+                            <li><i class="fas fa-check"></i> Big impact</li>
+                        </ul>
+                        <div class="card-footer">
+                            <span>Built environment</span>
+                            <a href="career-details.html?id=6" class="btn-outline">View Details</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo footer-logo"><i class="fas fa-briefcase"></i> CareerPath</a>
+                <p>Helping people turn their potential into a career that feels right for them.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="careers.html">Career paths</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 CareerPath. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

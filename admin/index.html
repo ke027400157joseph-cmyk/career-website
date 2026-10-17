@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | CareerPath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-page" data-admin-view="overview">
+    <header class="header"><nav class="navbar container"><a class="logo" href="index.html"><img class="career-matters-logo" src="../frontend/assets/career-matters-logo-cropped.png" alt="Career Matters"><span>Admin</span></a><div class="nav-auth"><a class="btn-outline" href="../frontend/dashboard.html">Back to site</a><form action="../backend/auth/logout.php" method="post"><button class="btn-primary" type="submit">Log out</button></form></div></nav></header>
+    <main class="admin-shell">
+        <div class="admin-heading"><div><span class="section-kicker">Administration</span><h1>Content overview</h1><p>Manage the career discovery catalogue.</p></div></div>
+        <nav class="admin-nav"><a class="active" href="index.html">Overview</a><a href="careers.html">Careers</a><a href="jobs.html">Jobs</a><a href="courses.html">Courses</a></nav>
+        <section id="admin-overview" class="admin-stats" aria-live="polite"><div class="admin-stat"><span>Careers</span><strong>--</strong></div><div class="admin-stat"><span>Jobs</span><strong>--</strong></div><div class="admin-stat"><span>Courses</span><strong>--</strong></div></section>
+        <p id="admin-status" class="admin-status" role="status" aria-live="polite"></p>
+        <section class="admin-panel"><h2>Recent applications</h2><div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Applicant</th><th>Job</th><th>Contact</th><th>Submitted</th><th>Cover letter</th></tr></thead><tbody id="application-rows"><tr><td colspan="5">Loading applications...</td></tr></tbody></table></div></section>
+    </main>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

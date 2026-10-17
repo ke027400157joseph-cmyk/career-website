@@ -1,0 +1,141 @@
+<!-- frontend/career-details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Details - CareerPath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo"><i class="fas fa-briefcase"></i> CareerPath</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="careers.html" class="active">Careers</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="quiz.html">Career Quiz</a></li>
+                <li><a href="ai.html">AI Guide</a></li>
+            </ul>
+            <div class="nav-auth">
+                <a href="login.html" class="btn-outline">Log In</a>
+                <a href="register.html" class="btn-primary">Sign Up</a>
+            </div>
+            <button class="mobile-toggle" id="mobile-toggle"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs container">
+            <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i>
+            <a href="careers.html">Careers</a> <i class="fas fa-chevron-right"></i>
+            <span id="breadcrumb-title">Loading...</span>
+        </div>
+
+        <!-- Details Header -->
+        <section class="details-header">
+            <div class="container">
+                <div class="details-header-content">
+                    <div class="details-copy">
+                        <span class="category-badge" id="career-category">Category</span>
+                        <h1 id="career-title">Career Title</h1>
+                        <p class="details-intro">Explore the role, unlock the skills behind it, and see how it connects to real-world opportunities.</p>
+                        <div class="details-meta">
+                            <span class="meta-item"><i class="fas fa-dollar-sign"></i> <strong id="career-salary">Avg. Salary</strong></span>
+                            <span class="meta-item"><i class="fas fa-chart-line"></i> High Demand</span>
+                        </div>
+                    </div>
+
+                    <div class="career-summary-card">
+                        <div class="summary-card-header">
+                            <span>Career snapshot</span>
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="summary-grid">
+                            <div class="summary-item">
+                                <small>Growth</small>
+                                <strong>Strong</strong>
+                            </div>
+                            <div class="summary-item">
+                                <small>Work style</small>
+                                <strong>Hybrid</strong>
+                            </div>
+                            <div class="summary-item">
+                                <small>Skill fit</small>
+                                <strong>Analytical</strong>
+                            </div>
+                            <div class="summary-item">
+                                <small>Pathway</small>
+                                <strong>Beginner to Pro</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="details-actions">
+                        <button class="btn-secondary"><i class="far fa-bookmark"></i> Save Career</button>
+                        <a href="quiz.html" class="btn-primary"><i class="fas fa-compass"></i> Take Quiz</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Grid -->
+        <section class="details-content">
+            <div class="container details-grid">
+                
+                <!-- Left Column: Main Info -->
+                <div class="details-main">
+                    <div class="info-block">
+                        <h2><i class="fas fa-info-circle"></i> Overview</h2>
+                        <p id="career-description" class="description-text">Loading description...</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h2><i class="fas fa-tools"></i> Required Skills</h2>
+                        <div id="career-skills" class="skills-container">
+                            <!-- Skills will be injected here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Sidebar (Jobs & Courses) -->
+                <aside class="details-sidebar">
+                    <div class="sidebar-block">
+                        <h3><i class="fas fa-briefcase"></i> Related Jobs</h3>
+                        <div id="related-jobs" class="mini-list">
+                            <p class="loading-text">Loading jobs...</p>
+                        </div>
+                        <a href="jobs.html" class="view-all-link">View All Jobs <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="sidebar-block">
+                        <h3><i class="fas fa-graduation-cap"></i> Recommended Courses</h3>
+                        <div id="related-courses" class="mini-list">
+                            <p class="loading-text">Loading courses...</p>
+                        </div>
+                        <a href="courses.html" class="view-all-link">View All Courses <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </aside>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 CareerPath. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

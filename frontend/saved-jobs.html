@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saved Jobs | CareerPath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/account.css">
+</head>
+<body>
+    <header class="header"><nav class="navbar container">
+        <a href="index.html" class="logo"><i class="fas fa-briefcase"></i> CareerPath</a>
+        <ul class="nav-links" id="nav-links"><li><a href="index.html">Home</a></li><li><a href="careers.html">Careers</a></li><li><a href="jobs.html">Jobs</a></li><li><a href="courses.html">Courses</a></li><li><a href="dashboard.html">Dashboard</a></li></ul>
+        <div class="nav-auth"><a href="profile.html" class="btn-outline">My profile</a><form action="../backend/auth/logout.php" method="post"><button class="btn-primary" type="submit">Log out</button></form></div>
+        <button class="mobile-toggle" id="mobile-toggle" type="button" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+    </nav></header>
+    <main class="account-page"><div class="container account-shell">
+        <div class="account-heading"><div><span class="section-kicker">Your shortlist</span><h1>Saved jobs</h1><p>Keep promising opportunities in one place.</p></div><a class="btn-primary" href="jobs.html">Browse jobs</a></div>
+        <section id="saved-jobs-list" class="account-list" aria-live="polite"><p class="account-empty">Loading saved jobs...</p></section>
+    </div></main>
+    <script src="../js/main.js"></script><script src="../js/saved-jobs.js"></script>
+</body>
+</html>
